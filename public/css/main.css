@@ -1,0 +1,21 @@
+body {
+   margin: 20px;
+   padding: 0;
+   width: 100%;
+   height: 100%;
+   color: black;
+   display: table;
+   font-weight: 100;
+   font-family: 'Lato';
+}
+.main {
+   color: #1b16da;
+}
+
+.result tr.title { color: white; background-color: #78788a; width: 100%;}
+.result tr td {  width:100px; }
+.result td.t1 { border-top-width: 1px; border-top-style: solid; color: black; }
+.result td.r1 { border-right-width: 1px; border-right-style: solid; color: black; }
+.result td.b1 { border-bottom-width: 1px; border-bottom-style: solid; color: black; }
+.result td.l1 { border-left-width: 1px; border-left-style: solid; color: black; }
+.result td.b3 { border-bottom-width: 3px; border-bottom-style: solid; color: black; }

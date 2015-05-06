@@ -37,9 +37,6 @@ class Data
         if (isset($_POST['num7'])) {
             $gameData['num7'] = $_POST['num7'];
         }
-        if (isset($_POST['result'])) {
-            $gameData['result'] = $_POST['result'];
-        }
         return $gameData;
     }
 }

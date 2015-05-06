@@ -11,4 +11,10 @@ header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
 $mux = require "router/route.php";
 
 $route = $mux->dispatch($_SERVER['DOCUMENT_URI']);
+
 echo Executor::execute($route);
+
+
+
+
+

@@ -32,19 +32,19 @@ var createTmp = function(){
                 num6 : NUM6value,
                 num7 : NUM7value
             }
-            gameNum();
+            gameNumUp();
         });
     });
 }
 //開獎結果送出
 $(document).on("click",".submitResult",function(){
     var idResult = $('.GAMERESULT').val().slice(0, 1);
-    result(idResult);
+    ordersResult(idResult);
 })
 //寫入開獎號碼
-var gameNum = function() {
+var gameNumUp = function() {
     $.ajax({
-        url: BASE_URL + "/gameNum",
+        url: BASE_URL + "/gameNumUpdate",
         type: "POST",
         dataType: "JSON",
         data: gamedata,
@@ -59,28 +59,28 @@ var gameNum = function() {
             } else if (response.status == false) {
                 alert('失敗，請重新輸入！');
             } else {
-                cusResult();
+                orderResultUp();
             }
         }
     })
 }
 //寫入orders_result
-var cusResult = function() {
+var orderResultUp = function() {
     $.ajax({
-        url: BASE_URL + "/cusResult",
+        url: BASE_URL + "/orderResultUpdate",
         type: "POST",
         dataType: "JSON",
         data: gamedata,
         success: function (response) {
             $('#gameNum').hide();
-            result(response.status);
+            ordersResult(response.status);
         }
     })
 }
 //orders_result_list
-var result = function(idResult) {
+var ordersResult = function(idResult) {
     $.ajax({
-        url: BASE_URL + "/result",
+        url: BASE_URL + "/ordersResult",
         type: "get",
         dataType: "JSON",
         data: {id : idResult},
@@ -133,9 +133,9 @@ var result = function(idResult) {
     })
 }
 //取gameid for 期數顯示
-var gameid = function() {
+var gameResult = function() {
     $.ajax({
-        url: BASE_URL + "/gameid",
+        url: BASE_URL + "/gameResult",
         type: "GET",
         dataType:'json',
         success: function (response) {
@@ -158,6 +158,6 @@ var gameid = function() {
     });
 }
 
-gameid();
+gameResult();
 
   

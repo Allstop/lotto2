@@ -1,7 +1,7 @@
 <?php
 namespace Mvc\Controller;
 
-use Mvc\View\Template;
+use Mvc\Core\Template;
 
 class TemplateController
 {
